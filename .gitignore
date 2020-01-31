@@ -3,6 +3,9 @@
 #IDE
 .idea
 
+#accets
+/test_assignment
+
 
 # dependencies
 /node_modules

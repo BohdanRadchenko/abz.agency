@@ -1,0 +1,75 @@
+.container {
+    display: block;
+    width: 100%;
+    padding: 80px 0 0 0 ;
+    margin: 0 auto;
+}
+
+.title {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 30px;
+    line-height: 34px;
+    text-align: center;
+}
+
+.imageWrapper {
+    margin: 0 auto;
+    margin-bottom: 40px;
+    display: block;
+    height:  243px;
+    width: 289px;
+    background-image: url('../../assets/man_laptop_v1.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+.subtitle {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+}
+
+.descriptionWrapper {
+    padding: 0 12px;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+.desc {
+    font-size: 16px;
+    line-height: 24px;
+    color: #4c4b4b;
+    text-align: justify;
+}
+
+.desc:first-child {
+    margin-bottom: 34px;
+}
+
+.desc:last-child {
+    margin-bottom: 40px;
+}
+
+.button {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    text-decoration: none;
+    color: #ef5b4c;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.button:hover {
+    color: #d24335;
+ }
