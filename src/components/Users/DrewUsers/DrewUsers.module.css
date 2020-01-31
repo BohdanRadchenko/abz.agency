@@ -27,6 +27,8 @@
     composes: name ;
     padding: 0 2px;
     margin-bottom: 17px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .position,

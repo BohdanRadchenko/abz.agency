@@ -19,6 +19,9 @@ const Users = ({users, handleCurrentPage, totalPage}) => {
     }
   };
 
+  const sl = users.map(el => el.name.split(' '))
+  console.log(sl)
+
   useEffect(() => {
     handleCurrentPage(currentPage);
   }, [handleCurrentPage, currentPage]);
@@ -29,9 +32,6 @@ const Users = ({users, handleCurrentPage, totalPage}) => {
         <h1 className={css.title}>
           Our cheerful users
         </h1>
-        {/*<p className={css.subtitle}>*/}
-        {/*  Attention! Sorting users by registration date*/}
-        {/*</p>*/}
         {users.length !== 0 && (
           <ul className={css.userList}>
             {sort.map(el => (

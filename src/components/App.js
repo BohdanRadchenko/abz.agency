@@ -7,6 +7,9 @@ import Header from "./Header/Header";
 import Bunner from "./Bunner/Bunner";
 import AboutMe from "./About/About";
 import Users from "./Users/Users";
+import RegistredForm from "./RegistredForm/RegistredForm";
+import Footer from "./Footer/Footer";
+
 import css from './App.module.css'
 
 
@@ -31,6 +34,8 @@ class App extends Component {
         <Bunner/>
         <AboutMe/>
         <Users/>
+        <RegistredForm/>
+        <Footer/>
       </div>
     )
   }
