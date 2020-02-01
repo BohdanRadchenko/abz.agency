@@ -1,18 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import {Element} from "react-scroll";
 import {connect} from 'react-redux';
-import arraySort from '../../helpers/sort.helpers'
 import * as usersSelectors from '../../redux/users/usersSelectors';
 import * as controllerSelectors from '../../redux/controller/controllerSelectors';
 import * as controllerActions from '../../redux/controller/controllerActions';
 import DrewUsers from "./DrewUsers/DrewUsers";
 import css from './Users.module.css';
-import * as usersOperations from "../../redux/users/usersOperations";
 
 
 const Users = ({users, handleCurrentPage, totalPage}) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const sort = arraySort(users);
 
   const handleShowMore = () => {
     if (totalPage > currentPage) {

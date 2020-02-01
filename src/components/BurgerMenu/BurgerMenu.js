@@ -32,6 +32,7 @@ const BurgerMenu = ({isOpen, burgerMenuToogle}) =>  {
                   <li>
                     <Link activeClass={css.activeLink}
                           spy={true}
+                          to="/"
                           className={css.menuLink}
                           smooth={true}
                           onClick={(e) => burgerMenuToogle()}>
@@ -61,6 +62,7 @@ const BurgerMenu = ({isOpen, burgerMenuToogle}) =>  {
                   <li className={css.menuItem}>
                     <Link activeClass={css.activeLink}
                           spy={true}
+                          to="/"
                           className={css.menuLink}
                           smooth={true}
                           onClick={(e) => burgerMenuToogle()}>

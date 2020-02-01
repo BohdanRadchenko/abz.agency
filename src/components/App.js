@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import { scrollSpy} from 'react-scroll'
+import {scrollSpy} from 'react-scroll'
 import * as usersOperations from '../redux/users/usersOperations';
 import * as controllerSelectors from '../redux/controller/controllerSelectors';
 
@@ -18,7 +18,7 @@ import css from './App.module.css'
 
 class App extends Component {
   componentDidMount() {
-  const page = this.props.page;
+    const page = this.props.page;
     this.props.fetchUsers(page);
     this.props.fetchToken();
     this.props.fetchPositions();
@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if(prevProps.page !== this.props.page){
+    if (prevProps.page !== this.props.page) {
       const page = this.props.page;
       this.props.fetchUsers(page);
     }
@@ -34,22 +34,28 @@ class App extends Component {
 
   render() {
     return (
-      <div className={css.container}>
+      <>
         <Modal/>
-        <BurgerMenu />
-        <Header/>
+        <div className={css.container}>
+          <BurgerMenu/>
+          <Header/>
+        </div>
         <Bunner/>
-        <AboutMe/>
-        <Users/>
-        <RegistredForm/>
-        <Footer/>
-      </div>
+        <div className={css.container}>
+          <AboutMe/>
+        </div>
+          <Users/>
+        <div className={css.container}>
+          <RegistredForm/>
+          <Footer/>
+        </div>
+      </>
     )
   }
 }
 
 const mapStateToProps = state => ({
-  page : controllerSelectors.getPage(state)
+  page: controllerSelectors.getPage(state)
 });
 
 const mapDispatchToProps = {

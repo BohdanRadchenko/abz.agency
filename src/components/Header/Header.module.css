@@ -1,3 +1,7 @@
+.element {
+  background-color: #fff;
+}
+
 .crutch {
   display: block;
   height: 40px;
@@ -7,12 +11,14 @@
   display: flex;
   width: 100%;
   height: 40px;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   background-color: #fff;
   justify-content: space-between;
   align-items: center;
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 1;
 }
 
@@ -39,5 +45,26 @@
   height: 15px;
   border: none;
   outline: none;
-  background-image: url(../../assets/menu_icon.png);
+  background-image: url('../../assets/menu_icon.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.burgerButton:focus {
+  border: none;
+  outline: none;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 708px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .navigation {
+    padding: 0;
+  }
+
 }
