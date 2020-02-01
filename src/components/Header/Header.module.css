@@ -1,10 +1,12 @@
-.element {
-  background-color: #fff;
-}
-
 .crutch {
   display: block;
+  width: 100%;
   height: 40px;
+  background: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
 }
 
 .container {
@@ -19,7 +21,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 999;
 }
 
 
@@ -33,10 +35,14 @@
 .logo {
   display: inline-block;
   width: 136px;
-  height: 20px;
+  height: 30px;
   background-image: url('../../assets/logo.svg');
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.menuList {
+  display: none;
 }
 
 .burgerButton {
@@ -66,5 +72,48 @@
   .navigation {
     padding: 0;
   }
+}
 
+@media screen and (min-width: 1280px) {
+  .crutch {
+    height: 60px;
+  }
+  .container {
+    width: 964px;
+    height: 60px;
+  }
+
+  .navigation {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    background-position: center center;
+  }
+
+  .burgerButton {
+    display: none;
+  }
+
+  .menuList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 450px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .menuItem {
+    cursor: pointer;
+  }
+
+  .menuLink:hover {
+  color: #ef5b4c;
+  }
+
+  .activeLink {
+    color: #1b4a8a;
+  }
 }

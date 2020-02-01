@@ -206,3 +206,15 @@
 .button:hover {
     background-color: #d24335;
 }
+
+@media screen and (min-width: 768px) {
+    .container {
+        padding: 120px 0;
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .title {
+        margin-bottom: 40px;
+    }
+}

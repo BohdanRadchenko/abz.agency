@@ -101,3 +101,24 @@
 
 }
 
+@media screen and (min-width: 1280px) {
+    .container {
+        min-width: 964px;
+        padding: 112px 0 ;
+    }
+
+    .description {
+        width: 550px;
+    }
+
+    .title {
+        font-size: 50px;
+        line-height: 54px;
+        margin-bottom: 34px;
+    }
+
+    .subtitle {
+        margin-bottom: 40px;
+    }
+}
+

@@ -5,7 +5,7 @@ const DrewUsers = ({name, email, phone, position, photo}) => {
   return (
     <div className={css.container}>
      <div className={css.imageWrapper}>
-       <img className={css.image} src={photo} alt="avatars"/>
+       <img className={css.image} src={photo} alt="avatars"  width="70" height="70"/>
      </div>
       <p className={name.length < 16 ? (css.name) : (css.nameLong)}> {name} </p>
       <p className={css.position}> {position} </p>

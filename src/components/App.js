@@ -36,9 +36,9 @@ class App extends Component {
     return (
       <>
         <Modal/>
+        <Header/>
         <div className={css.container}>
           <BurgerMenu/>
-          <Header/>
         </div>
         <Bunner/>
         <div className={css.container}>
@@ -47,8 +47,8 @@ class App extends Component {
           <Users/>
         <div className={css.container}>
           <RegistredForm/>
-          <Footer/>
         </div>
+          <Footer/>
       </>
     )
   }

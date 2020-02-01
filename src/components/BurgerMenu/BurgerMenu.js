@@ -9,6 +9,7 @@ const BurgerMenu = ({isOpen, burgerMenuToogle}) =>  {
   useEffect( () => {
     scrollSpy.update();
   })
+
     return (
       <>
         {isOpen && (
