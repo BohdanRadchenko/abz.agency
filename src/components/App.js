@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import { scrollSpy} from 'react-scroll'
 import * as usersOperations from '../redux/users/usersOperations';
 import * as controllerSelectors from '../redux/controller/controllerSelectors';
+
+import Modal from "./Modal/Modal";
 import BurgerMenu from "./BurgerMenu/BurgerMenu";
 import Header from "./Header/Header";
 import Bunner from "./Bunner/Bunner";
@@ -17,6 +20,9 @@ class App extends Component {
   componentDidMount() {
   const page = this.props.page;
     this.props.fetchUsers(page);
+    this.props.fetchToken();
+    this.props.fetchPositions();
+    scrollSpy.update();
   }
 
   componentDidUpdate(prevProps) {
@@ -29,6 +35,7 @@ class App extends Component {
   render() {
     return (
       <div className={css.container}>
+        <Modal/>
         <BurgerMenu />
         <Header/>
         <Bunner/>
@@ -47,5 +54,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   fetchUsers: usersOperations.fetchUsers,
+  fetchToken: usersOperations.fetchToken,
+  fetchPositions: usersOperations.fetchPositions,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(App);

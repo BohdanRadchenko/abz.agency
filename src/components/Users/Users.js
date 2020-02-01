@@ -7,20 +7,18 @@ import * as controllerSelectors from '../../redux/controller/controllerSelectors
 import * as controllerActions from '../../redux/controller/controllerActions';
 import DrewUsers from "./DrewUsers/DrewUsers";
 import css from './Users.module.css';
+import * as usersOperations from "../../redux/users/usersOperations";
 
 
 const Users = ({users, handleCurrentPage, totalPage}) => {
-  const sort = arraySort(users);
   const [currentPage, setCurrentPage] = useState(1);
+  const sort = arraySort(users);
 
   const handleShowMore = () => {
     if (totalPage > currentPage) {
       setCurrentPage(currentPage + 1);
     }
-  };
-
-  const sl = users.map(el => el.name.split(' '))
-  console.log(sl)
+  }
 
   useEffect(() => {
     handleCurrentPage(currentPage);
@@ -34,7 +32,7 @@ const Users = ({users, handleCurrentPage, totalPage}) => {
         </h1>
         {users.length !== 0 && (
           <ul className={css.userList}>
-            {sort.map(el => (
+            {users.map(el => (
               <li key={el.id} className={css.userItems}>
                 <DrewUsers {...el} />
               </li>
@@ -55,7 +53,7 @@ const Users = ({users, handleCurrentPage, totalPage}) => {
 
 const mapStateToProps = state => ({
   users: usersSelectors.getAllUsers(state),
-  totalPage: controllerSelectors.getTotalPage(state)
+  totalPage: controllerSelectors.getTotalPage(state),
 })
 
 const mapDispatchToProps = {

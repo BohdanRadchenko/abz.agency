@@ -19,7 +19,7 @@ const currentPage = (state = 1, { type, payload }) => {
   }
 };
 
-const modalOpen = (state = false, { type }) => {
+const modalOpen = (state = true, { type }) => {
   switch (type) {
     case ActionTypes.MODAL_OPEN:
       return true;

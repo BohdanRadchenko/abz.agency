@@ -1,5 +1,5 @@
 import React from 'react';
-import {Element} from 'react-scroll';
+import {Element, Link} from 'react-scroll';
 import css from './About.module.css'
 
 
@@ -22,7 +22,9 @@ const About = () => {
             P​SD mockup​ into HTML5/CSS3.
           </p>
         </div>
-        <a className={css.button} href="/"> Sing up now </a>
+        <Link to="form" smooth={true} className={css.button}>
+          Sing up now
+        </Link>
       </div>
     </Element>
   )

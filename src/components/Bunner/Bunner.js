@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-scroll'
 import css from './Bunner.module.css'
 
 const Bunner = () => {
@@ -14,7 +15,9 @@ const Bunner = () => {
           </p>
         </div>
         <button className={css.button}>
-          Sing up now
+          <Link to="form" smooth={true}>
+            Sing up now
+          </Link>
         </button>
       </div>
     </div>

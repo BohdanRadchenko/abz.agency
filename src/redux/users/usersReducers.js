@@ -1,6 +1,27 @@
 import { combineReducers } from 'redux';
 import {ActionTypes} from './actionTypeUsers'
 
+const positionReducer = (state = [], { type, payload }) => {
+  switch (type) {
+    case ActionTypes.FETCH_POSITIONS_SUCCESS:
+      return payload;
+
+    default:
+      return state;
+  }
+};
+
+const tokenReducer = (state = null, { type, payload }) => {
+  switch (type) {
+    case ActionTypes.FETCH_TOKEN_SUCCESS:
+      return payload.token;
+
+    default:
+      return state;
+  }
+};
+
+
 const itemsReducer = (state = [], { type, payload }) => {
   switch (type) {
     case ActionTypes.FETCH_USERS_SUCCESS:
@@ -10,7 +31,7 @@ const itemsReducer = (state = [], { type, payload }) => {
     return payload;
 
     case ActionTypes.ADD_USER_SUCCESS:
-      return [...state, payload];
+      return payload;
 
     default:
       return state;
@@ -20,10 +41,16 @@ const itemsReducer = (state = [], { type, payload }) => {
 const loadingReducer = (state = false, { type, payload }) => {
   switch (type) {
     case ActionTypes.FETCH_USERS_REQUEST:
+    case ActionTypes.FETCH_POSITIONS_REQUEST:
+    case ActionTypes.FETCH_TOKEN_REQUEST:
     case ActionTypes.FETCH_USER_BY_ID_REQUEST:
     case ActionTypes.ADD_USER_REQUEST:
       return true;
 
+    case ActionTypes.FETCH_POSITIONS_SUCCESS:
+    case ActionTypes.FETCH_POSITIONS_ERROR:
+    case ActionTypes.FETCH_TOKEN_SUCCESS:
+    case ActionTypes.FETCH_TOKEN_ERROR:
     case ActionTypes.FETCH_USERS_SUCCESS:
     case ActionTypes.FETCH_USERS_ERROR:
     case ActionTypes.FETCH_USER_BY_ID_SUCCESS:
@@ -37,13 +64,26 @@ const loadingReducer = (state = false, { type, payload }) => {
   }
 };
 
+const messageReducer = (state = '', { type, payload }) => {
+  switch (type) {
+    case ActionTypes.ADD_USER_SUCCESS:
+      return payload;
+    default:
+      return state;
+  }
+};
+
 const errorReducer = (state = null, { type, payload }) => {
   switch (type) {
+    case ActionTypes.FETCH_POSITIONS_REQUEST:
+    case ActionTypes.FETCH_TOKEN_REQUEST:
     case ActionTypes.FETCH_USERS_REQUEST:
     case ActionTypes.FETCH_USER_BY_ID_REQUEST:
     case ActionTypes.ADD_USER_REQUEST:
       return null;
 
+    case ActionTypes.FETCH_POSITIONS_ERROR:
+    case ActionTypes.FETCH_TOKEN_ERROR:
     case ActionTypes.FETCH_USERS_ERROR:
     case ActionTypes.FETCH_USER_BY_ID_ERROR:
     case ActionTypes.ADD_USER_ERROR:
@@ -55,6 +95,9 @@ const errorReducer = (state = null, { type, payload }) => {
 };
 
 export default combineReducers({
+  message : messageReducer,
+  positions : positionReducer,
+  token : tokenReducer,
   items: itemsReducer,
   loading: loadingReducer,
   error: errorReducer,

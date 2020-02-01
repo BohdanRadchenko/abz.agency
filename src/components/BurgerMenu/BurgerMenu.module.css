@@ -49,19 +49,26 @@
     list-style: none;
 }
 
-/*.menuItem {*/
-/*    margin-bottom: 30px;*/
-/*}*/
-
-/*.menuItem:last-child {*/
-/*    margin-bottom: 0;*/
-/*}*/
-
 .menuLink {
+    cursor: pointer;
     display: block;
     font-size: 16px;
     line-height: 24px;
     padding: 15px 0;
+}
+
+.menuLink:hover {
+    color: #1b4a8a;
+}
+
+.menuLink > .activeLink {
+    font-size: 40px;
+    color: #1b4a8a;
+}
+
+.activeLink {
+    color: #1b4a8a;
+
 }
 
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import css from './DrewUsers.module.css'
 
-const DrewUsers = ({id, name, email, phone, position, photo}) => {
+const DrewUsers = ({name, email, phone, position, photo}) => {
   return (
     <div className={css.container}>
      <div className={css.imageWrapper}>
@@ -12,7 +12,7 @@ const DrewUsers = ({id, name, email, phone, position, photo}) => {
       <p
         className={email.length <= 20 ? css.email : [css.emailLong, css.email].join(' ')}
          tooltip={email} >
-        {email.length <= 20 ? email : email.slice(0, 20) + "..."}
+        {email.length <= 20 ? email : email.slice(0, 10) + "..." + email.slice(-10)}
        </p>
       <p className={css.phone}> {phone} </p>
     </div>

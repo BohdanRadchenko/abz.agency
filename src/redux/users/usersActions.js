@@ -1,23 +1,40 @@
 import {ActionTypes} from './actionTypeUsers'
 
-//FETCH USERS BY ID
-// export const fetchFilmsByIdRequest = () => ({
-//   type: ActionType.FETCH_FILMS__BY_ID_REQUEST,
-// });
-//
-// export const fetchFilmsByIdSuccess = films => ({
-//   type: ActionType.FETCH_FILMS__BY_ID_SUCCESS,
-//   payload : {
-//     films,
-//   }
-// });
-//
-// export const fetchFilmsByIdError = error => ({
-//   type: ActionType.FETCH_FILMS__BY_ID_ERROR,
-//   payload : {
-//     error,
-//   }
-// });
+//FETCH POSITION
+export const fetchPositionsRequest = () => ({
+  type: ActionTypes.FETCH_POSITIONS_REQUEST,
+});
+
+export const fetchPositionsSuccess = (position) => ({
+  type: ActionTypes.FETCH_POSITIONS_SUCCESS,
+  payload : position
+});
+
+export const fetchPositionsError = error => ({
+  type: ActionTypes.FETCH_POSITIONS_ERROR,
+  payload : {
+    error,
+  }
+});
+
+// FETCH TOKEN
+export const fetchTokenRequest = () => ({
+  type: ActionTypes.FETCH_TOKEN_REQUEST,
+});
+
+export const fetchTokenSuccess = token => ({
+  type: ActionTypes.FETCH_TOKEN_SUCCESS,
+  payload : {
+    token
+  }
+});
+
+export const fetchTokenError = error => ({
+  type: ActionTypes.FETCH_TOKEN_ERROR,
+  payload : {
+    error,
+  }
+});
 
 // FETCH USERS
 export const fetchUsersRequest = () => ({
@@ -39,20 +56,20 @@ export const fetchUsersError = error => ({
 });
 
 // ADD USERS
-// export const addFilmRequest = () => ({
-//   type: ActionType.ADD_FILM_REQUEST,
-// });
-//
-// export const addFilmSuccess = film => ({
-//   type: ActionType.ADD_FILM_SUCCESS,
-//   payload: {
-//     film,
-//   },
-// });
-//
-// export const addFilmError = error => ({
-//   type: ActionType.ADD_FILM_ERROR,
-//   payload: {
-//     error,
-//   },
-// });
+export const addUserRequest = () => ({
+  type: ActionTypes.ADD_USER_REQUEST,
+});
+
+export const addUserSuccess = user => ({
+  type: ActionTypes.ADD_USER_SUCCESS,
+  payload: {
+    user,
+  },
+});
+
+export const addUserError = error => ({
+  type: ActionTypes.ADD_USER_ERROR,
+  payload: {
+    error,
+  },
+});
