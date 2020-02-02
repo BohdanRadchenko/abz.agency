@@ -1,0 +1,2 @@
+(this["webpackJsonpabz.agency"]=this["webpackJsonpabz.agency"]||[]).push([[9],{113:function(e,t,a){e.exports={container:"Footer_container__1otxU",title:"Footer_title__2mqra"}},119:function(e,t,a){"use strict";a.r(t);var n=a(0),c=a.n(n),o=a(113),r=a.n(o);t.default=function(){return c.a.createElement("div",{className:r.a.container},c.a.createElement("p",{className:r.a.title},"\xa9 abz.agency specially for the test task"))}}}]);
+//# sourceMappingURL=9.7003a8f7.chunk.js.map
