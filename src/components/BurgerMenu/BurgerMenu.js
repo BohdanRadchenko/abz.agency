@@ -1,32 +1,32 @@
 import React, {useEffect} from 'react';
-import { Link, scrollSpy} from 'react-scroll';
-import { connect } from 'react-redux';
+import {Link, scrollSpy} from 'react-scroll';
+import {connect} from 'react-redux';
 import * as controllerActions from '../../redux/controller/controllerActions';
 import * as controllerSelectors from '../../redux/controller/controllerSelectors';
 import css from './BurgerMenu.module.css';
 
-const BurgerMenu = ({isOpen, burgerMenuToogle}) =>  {
-  useEffect( () => {
+const BurgerMenu = ({isOpen, burgerMenuToogle}) => {
+  useEffect(() => {
     scrollSpy.update();
   })
 
-    return (
-      <>
-        {isOpen && (
-            <div className={css.container}>
-            <nav className={css.navigation}>
-              <div className={css.logoWrap}>
-                <Link to="header" className={css.logo} smooth={true} onClick={(e) => burgerMenuToogle()}></Link>
-              </div>
-
+  return (
+    <>
+      {isOpen && (
+        <div className={css.container}>
+          <nav className={css.navigation}>
+            <div className={css.logoWrap}>
+              <Link to="header" className={css.logo} smooth={true} onClick={(e) => burgerMenuToogle()}></Link>
+            </div>
+            <div className={css.menuSectionWrapper}>
               <div className={css.menuSection}>
                 <ul className={css.menuList}>
                   <li className={css.menuItem}>
-                      <Link activeClass={css.activeLink}
-                            spy={true}
-                            to="about"
-                            className={css.menuLink}
-                            smooth={true} onClick={(e) => burgerMenuToogle()}>
+                    <Link activeClass={css.activeLink}
+                          spy={true}
+                          to="about"
+                          className={css.menuLink}
+                          smooth={true} onClick={(e) => burgerMenuToogle()}>
                       About Me
                     </Link>
                   </li>
@@ -132,13 +132,14 @@ const BurgerMenu = ({isOpen, burgerMenuToogle}) =>  {
                   </li>
                 </ul>
               </div>
+            </div>
 
-            </nav>
-          </div>
-        ) }
-      </>
-    );
-  }
+          </nav>
+        </div>
+      )}
+    </>
+  );
+}
 
 const mapStateToProps = state => ({
   isOpen: controllerSelectors.burgerMenuIsOpen(state)

@@ -1,6 +1,6 @@
 .container {
     width: 80%;
-    overflow-x: scroll;
+    overflow-y: scroll;
     position: fixed;
     top: 0;
     left: 0;
@@ -64,6 +64,39 @@
 .activeLink {
     color: #1b4a8a;
     font-weight: 500;
+}
+
+@media screen and (min-width: 768px ) {
+    .container {
+        top: 20px;
+        width: 100%;
+        height: auto;
+        background-color: transparent;
+        overflow-y: auto;
+    }
+
+    .navigation {
+        margin: 0 auto;
+        width: 708px;
+        background-color: #fff;
+    }
+
+    .menuSectionWrapper {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid #e1e1e1;
+    }
+
+    .menuSection {
+        width: 30%;
+        border: none;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .container {
+        display: none;
+    }
 }
 
 
