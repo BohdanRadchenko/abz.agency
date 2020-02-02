@@ -1,4 +1,5 @@
 .bunner {
+    margin-top: 40px;
     display: block;
     width: 100%;
     height: auto;
@@ -43,7 +44,7 @@
     font-size: 30px;
     line-height: 34px;
     text-transform: uppercase;
-    margin-bottom: 30px;
+    margin-bottom: 14px;
 }
 
 .subtitle {
@@ -58,7 +59,6 @@
     margin: 0 auto;
     width: 210px;
     background-color: #ef5b4c;
-    /*padding: 16px 0;*/
     padding: 0;
     border: none;
     outline: none;
@@ -75,7 +75,7 @@
 
 .btnLink {
     composes: btn;
-    padding: 16px 0;
+    padding: 12px 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -90,12 +90,12 @@
     }
 
     .container {
-        width: 708px;
+        min-width: 708px;
         margin: 0 auto;
     }
 
     .bunnerWrapper {
-        padding: 64px 0;
+        padding: 80px 0;
         margin: 0 auto;
         width: 100%;
     }
@@ -109,12 +109,16 @@
     .subtitle {
         text-align: left;
         padding: 0;
-        margin-bottom: 36px;
     }
 
     .title {
         font-size: 40px;
         line-height: 44px;
+        margin-bottom: 27px;
+    }
+
+    .subtitle {
+        margin-bottom: 34px;
     }
 
     .btn {
@@ -134,7 +138,7 @@
     }
     .container {
         min-width: 964px;
-        max-width: 1024px;
+        max-width: 1170px;
         padding: 112px 0 ;
     }
 

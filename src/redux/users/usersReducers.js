@@ -28,10 +28,10 @@ const itemsReducer = (state = [], { type, payload }) => {
       return [...state, ...payload.users.sort((a,b) =>  a.registration_timestamp > b.registration_timestamp)];
 
     case ActionTypes.FETCH_USER_BY_ID_SUCCESS:
-    return payload;
+    return state;
 
     case ActionTypes.ADD_USER_SUCCESS:
-      return state;
+      return payload.user;
 
     default:
       return state;

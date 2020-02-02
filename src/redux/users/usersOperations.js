@@ -18,16 +18,16 @@ import {modalOpen} from '../controller/controllerActions'
 
 import {handleTotalPage} from '../controller/controllerActions'
 
+const screenWidth = document.documentElement.clientWidth;
+let count = 5;
+if(screenWidth < 768) {
+  count = 3
+} else {
+  count = 6
+}
 
 // FETCH USERS
 export const fetchUsers = (page) => dispatch => {
-  const screenWidth = document.documentElement.clientWidth;
-  let count = 5;
-  if(screenWidth < 768) {
-    count = 3
-  } else {
-    count = 6
-  }
   const URL  = `https://frontend-test-assignment-api.abz.agency/api/v1/users?page=${page}&count=${count}`;
 
   dispatch(fetchUsersRequest());
@@ -74,17 +74,16 @@ export const fetchPositions = () => dispatch => {
 
 // POST USERS
   export const fetchPostUser = (data , token) => dispatch => {
-    const URL  = "https://frontend-test-assignment-api.abz.agency/api/v1/users";
+    const URL_POST  = "https://frontend-test-assignment-api.abz.agency/api/v1/users";
+    const URL_GET  = `https://frontend-test-assignment-api.abz.agency/api/v1/users?page=1&count=${count}`;
     dispatch(addUserRequest());
     axios
-      .post(URL, data, {headers : {'Token': token}})
+      .post(URL_POST, data, {headers : {'Token': token}})
       .then(response => {
-        console.log(response)
+        axios.get(URL_GET).then(response => dispatch(addUserSuccess(response.data.users)))
         dispatch(modalOpen())
-        dispatch(addUserSuccess())
       })
       .catch(function(error) {
-        console.log(error)
         dispatch(addUserError(error));
       });
   };

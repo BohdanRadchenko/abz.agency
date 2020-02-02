@@ -32,16 +32,9 @@ const RegistredForm = ({positions, token, fetchPostUser, page, fetchUsers, modal
     e.preventDefault();
     const data = createFormData(form);
     fetchPostUser(data, token);
-    fetchUsers(page);
+    // fetchUsers(page);
     setForm(defaultForm);
   };
-
-  const handleTest = (e) => {
-    // const data = createFormData(form);
-    // fetchPostUser(data, token);
-    fetchUsers(1);
-  };
-
 
   return (
     <Element name="form" className="element">
@@ -148,10 +141,6 @@ const RegistredForm = ({positions, token, fetchPostUser, page, fetchUsers, modal
           <button type="submit" className={css.button}>Sign up now</button>
         </form>
       </div>
-
-      <button onClick={(e) => handleTest(e)}>
-        test
-      </button>
     </Element>
   )
 };

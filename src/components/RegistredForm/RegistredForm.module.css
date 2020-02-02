@@ -1,13 +1,13 @@
 .container {
     display: block;
-    padding: 80px 0;
+    padding: 74px 0;
     width: 100%;
     margin: 0 auto;
 }
 
 .title {
     margin: 0;
-    margin-bottom: 24px;
+    margin-bottom: 15px;
     text-align: center;
     font-size: 30px;
 }
@@ -18,7 +18,7 @@
     line-height: 24px;
     text-align: center;
     margin: 0;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     padding: 0 32px;
 }
 
@@ -27,7 +27,7 @@
 .form {
     display: block;
     margin: 0 auto;
-    width: 90%;
+    width: 92%;
 }
 
 /*INPUT */
@@ -35,7 +35,7 @@
     font-size: 16px;
     line-height: 24px;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
 }
 
 .labelValid {
@@ -43,7 +43,7 @@
     color: #6c757d;
     font-size: 12px;
     opacity: 0;
-    margin-bottom: 10px;
+    margin-bottom: -6px;
 }
 
 .labelValid:last-child {
@@ -58,7 +58,7 @@
     font-size: 16px;
     line-height: 36px;
     padding-left: 14px;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .input::placeholder {
@@ -238,7 +238,7 @@
 @media screen and (min-width: 1280px) {
     .container {
         min-width: 964px;
-        max-width: 1024px;
+        max-width: 1170px;
         padding: 160px 0;
     }
 

@@ -36,7 +36,7 @@
 .logo {
   display: inline-block;
   width: 136px;
-  height: 30px;
+  height: 20px;
   background-image: url('../../assets/logo.svg');
   background-repeat: no-repeat;
   background-size: contain;
@@ -52,9 +52,10 @@
   height: 15px;
   border: none;
   outline: none;
+  background-color: #fff;
   background-image: url('../../assets/menu_icon.svg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center center;
 }
 
@@ -85,8 +86,9 @@
     height: 60px;
   }
   .container {
+    width: 100%;
     min-width: 964px;
-    max-width: 1024px;
+    max-width: 1170px;
     height: 60px;
   }
 
