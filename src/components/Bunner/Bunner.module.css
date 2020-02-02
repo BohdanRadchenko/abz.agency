@@ -2,10 +2,16 @@
     display: block;
     width: 100%;
     height: auto;
-    background-image: url('../../assets/banner-photo.jpg');
+    background-image: url('../../assets/mobile_bunner-min.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .bunner {
+        background-image: url('../../assets/mobile_bunner@2x-min.png');
+    }
 }
 
 .container {
@@ -73,6 +79,16 @@
 }
 
 @media screen and (min-width: 768px) {
+    .bunner {
+        background-image: url('../../assets/table_bunner-min.png');
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .bunner {
+            background-image: url('../../assets/table_bunner@2x-min.png');
+        }
+    }
+
     .container {
         width: 708px;
         margin: 0 auto;
@@ -107,6 +123,15 @@
 }
 
 @media screen and (min-width: 1280px) {
+    .bunner {
+        background-image: url('../../assets/desktop_bunner-min.png');
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .bunner {
+            background-image: url('../../assets/desktop_bunner@2x-min.png');
+        }
+    }
     .container {
         min-width: 964px;
         max-width: 1024px;

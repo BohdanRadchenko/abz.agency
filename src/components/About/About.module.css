@@ -20,10 +20,16 @@
     display: block;
     height:  243px;
     width: 289px;
-    background-image: url('../../assets/man_laptop_v1.svg');
+    background-image: url('../../assets/mobile_man-min.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .imageWrapper {
+        background-image: url('../../assets/mobile_man@2x-min.png');
+    }
 }
 
 .subtitle {
@@ -101,6 +107,13 @@ p {
     .imageWrapper {
         width: inherit;
         height: 210px;
+        background-image: url('../../assets/table_man-min.png');
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .imageWrapper {
+            background-image: url('../../assets/table_man@2x-min.png');
+        }
     }
 
     .rigthSide {
@@ -149,6 +162,13 @@ p {
     .imageWrapper {
         width: inherit;
         height: 210px;
+        background-image: url('../../assets/desktop_man-min.png');
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .imageWrapper {
+            background-image: url('../../assets/desktop_man@2x-min.png');
+        }
     }
 
     .rigthSide {
