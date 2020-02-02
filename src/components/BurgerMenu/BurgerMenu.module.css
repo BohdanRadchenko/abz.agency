@@ -40,6 +40,10 @@
     border-top: none;
 }
 
+.menuSection:first-child {
+    border-top: 1px solid #e1e1e1;
+}
+
 .menuList {
     padding: 0;
     padding-left: 15px;
@@ -82,6 +86,7 @@
     }
 
     .menuSectionWrapper {
+        padding: 20px 0;
         display: flex;
         justify-content: space-between;
         border: 1px solid #e1e1e1;
@@ -89,6 +94,10 @@
 
     .menuSection {
         width: 30%;
+        border: none;
+    }
+
+    .menuSection:first-child {
         border: none;
     }
 }
