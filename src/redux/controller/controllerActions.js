@@ -1,5 +1,10 @@
 import {ActionTypes} from './actionTypeController'
 
+export const reload = () => ({
+  type: ActionTypes.APP_RELOAD,
+  payload: {},
+});
+
 export const modalOpen = () => ({
   type: ActionTypes.MODAL_OPEN,
   payload: {},

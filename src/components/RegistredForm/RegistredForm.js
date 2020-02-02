@@ -33,10 +33,15 @@ const RegistredForm = ({positions, token, fetchPostUser, page, fetchUsers, modal
     const data = createFormData(form);
     fetchPostUser(data, token);
     fetchUsers(page);
-    modalOpen();
     setForm(defaultForm);
-
   };
+
+  const handleTest = (e) => {
+    // const data = createFormData(form);
+    // fetchPostUser(data, token);
+    fetchUsers(1);
+  };
+
 
   return (
     <Element name="form" className="element">
@@ -44,6 +49,9 @@ const RegistredForm = ({positions, token, fetchPostUser, page, fetchUsers, modal
         <h1 className={css.title}>
           Register to get a work
         </h1>
+        <p className={css.subtitle}>
+          Attention! After successful registration and alert, update the list of users in the block from the top
+        </p>
         <form className={css.form} onSubmit={e => submitHandler(e)}>
           <label className={css.label} htmlFor="name">Name</label>
           <input className={css.input}
@@ -140,6 +148,10 @@ const RegistredForm = ({positions, token, fetchPostUser, page, fetchUsers, modal
           <button type="submit" className={css.button}>Sign up now</button>
         </form>
       </div>
+
+      <button onClick={(e) => handleTest(e)}>
+        test
+      </button>
     </Element>
   )
 };
@@ -147,13 +159,13 @@ const RegistredForm = ({positions, token, fetchPostUser, page, fetchUsers, modal
 const mapStateToProps = state => ({
   positions: usersSelectors.getPositions(state),
   token: usersSelectors.getToken(state),
-  page : controllerSelectors.getPage(state)
+  page : controllerSelectors.getPage(state),
 });
 
 const mapDispatchToProps = {
   fetchPostUser: usersOperations.fetchPostUser,
   fetchUsers: usersOperations.fetchUsers,
-  modalOpen: controllerActions.modalOpen
+  modalOpen: controllerActions.modalOpen,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(RegistredForm);

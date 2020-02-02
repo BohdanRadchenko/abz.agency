@@ -15,7 +15,7 @@ const Users = ({users, handleCurrentPage, totalPage}) => {
     if (totalPage > currentPage) {
       setCurrentPage(currentPage + 1);
     }
-  }
+  };
 
   useEffect(() => {
     handleCurrentPage(currentPage);
@@ -27,10 +27,13 @@ const Users = ({users, handleCurrentPage, totalPage}) => {
         <h1 className={css.title}>
           Our cheerful users
         </h1>
+        <p className={css.subtitle}>
+          Attention! Sorting users by registration date
+        </p>
         {users.length !== 0 && (
           <ul className={css.userList}>
-            {users.map(el => (
-              <li key={el.id} className={css.userItems}>
+            {users.map((el, i) => (
+              <li key={el.id * i} className={css.userItems}>
                 <DrewUsers {...el} />
               </li>
             ))}

@@ -25,13 +25,13 @@ const tokenReducer = (state = null, { type, payload }) => {
 const itemsReducer = (state = [], { type, payload }) => {
   switch (type) {
     case ActionTypes.FETCH_USERS_SUCCESS:
-      return [...state, ...payload.users];
+      return [...state, ...payload.users.sort((a,b) =>  a.registration_timestamp > b.registration_timestamp)];
 
     case ActionTypes.FETCH_USER_BY_ID_SUCCESS:
     return payload;
 
     case ActionTypes.ADD_USER_SUCCESS:
-      return payload;
+      return state;
 
     default:
       return state;
@@ -64,15 +64,6 @@ const loadingReducer = (state = false, { type, payload }) => {
   }
 };
 
-const messageReducer = (state = '', { type, payload }) => {
-  switch (type) {
-    case ActionTypes.ADD_USER_SUCCESS:
-      return payload;
-    default:
-      return state;
-  }
-};
-
 const errorReducer = (state = null, { type, payload }) => {
   switch (type) {
     case ActionTypes.FETCH_POSITIONS_REQUEST:
@@ -95,7 +86,6 @@ const errorReducer = (state = null, { type, payload }) => {
 };
 
 export default combineReducers({
-  message : messageReducer,
   positions : positionReducer,
   token : tokenReducer,
   items: itemsReducer,

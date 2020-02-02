@@ -16,6 +16,7 @@ import Footer from "./Footer/Footer";
 import css from './App.module.css'
 
 
+
 class App extends Component {
   componentDidMount() {
     const page = this.props.page;
@@ -33,6 +34,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.props)
     return (
       <>
         <Modal/>
@@ -55,7 +57,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  page: controllerSelectors.getPage(state)
+  page: controllerSelectors.getPage(state),
 });
 
 const mapDispatchToProps = {

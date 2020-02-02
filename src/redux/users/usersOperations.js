@@ -14,6 +14,8 @@ import {
   addUserError,
 } from './usersActions';
 
+import {modalOpen} from '../controller/controllerActions'
+
 import {handleTotalPage} from '../controller/controllerActions'
 
 
@@ -77,9 +79,12 @@ export const fetchPositions = () => dispatch => {
     axios
       .post(URL, data, {headers : {'Token': token}})
       .then(response => {
-        dispatch(addUserSuccess(response.data.message));
+        console.log(response)
+        dispatch(modalOpen())
+        dispatch(addUserSuccess())
       })
       .catch(function(error) {
+        console.log(error)
         dispatch(addUserError(error));
       });
   };

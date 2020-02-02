@@ -27,8 +27,8 @@ const Bunner = () => {
               </p>
             )}
           </div>
-          <button className={css.button}>
-            <Link to="form" smooth={true}>
+          <button className={css.btn}>
+            <Link to="form" smooth={true} className={css.btnLink}>
               Sing up now
             </Link>
           </button>

@@ -175,6 +175,7 @@ p {
 @media screen and (min-width: 1280px) {
     .container {
         min-width: 964px;
+        max-width: 1024px;
         padding: 160px 0;
     }
 

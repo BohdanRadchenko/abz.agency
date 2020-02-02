@@ -79,7 +79,8 @@
     height: 60px;
   }
   .container {
-    width: 964px;
+    min-width: 964px;
+    max-width: 1024px;
     height: 60px;
   }
 
