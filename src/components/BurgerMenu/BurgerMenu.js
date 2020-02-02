@@ -15,9 +15,6 @@ const BurgerMenu = ({isOpen, burgerMenuToogle}) => {
       {isOpen && (
         <div className={css.container}>
           <nav className={css.navigation}>
-            <div className={css.logoWrap}>
-              <Link to="header" className={css.logo} smooth={true} onClick={(e) => burgerMenuToogle()}></Link>
-            </div>
             <div className={css.menuSectionWrapper}>
               <div className={css.menuSection}>
                 <ul className={css.menuList}>
