@@ -29,6 +29,7 @@
   width: 100%;
   padding: 0 15px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -63,10 +64,15 @@
 }
 
 @media screen and (min-width: 768px) {
+  .crutch {
+    height: 60px;
+  }
+
   .container {
     width: 708px;
     top: 0;
     left: 50%;
+    height: 60px;
     transform: translateX(-50%);
   }
   .navigation {
