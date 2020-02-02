@@ -1,21 +1,37 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, {Component, lazy, Suspense} from 'react';
 import {scrollSpy} from 'react-scroll'
+import {connect} from 'react-redux';
+import Loaders from './Loaders'
 import * as usersOperations from '../redux/users/usersOperations';
 import * as controllerSelectors from '../redux/controller/controllerSelectors';
 
-import Modal from "./Modal/Modal";
-import BurgerMenu from "./BurgerMenu/BurgerMenu";
-import Header from "./Header/Header";
-import Bunner from "./Bunner/Bunner";
-import AboutMe from "./About/About";
-import Users from "./Users/Users";
-import RegistredForm from "./RegistredForm/RegistredForm";
-import Footer from "./Footer/Footer";
-
 import css from './App.module.css'
 
+const AsyncModal = lazy(() =>
+  import("./Modal/Modal"),
+);
+const AsyncHeader = lazy(() =>
+  import("./Header/Header"),
+);
+const AsyncBurgerMenu = lazy(() =>
+  import("./BurgerMenu/BurgerMenu"),
+);
 
+const AsyncBunner = lazy(() =>
+  import("./Bunner/Bunner"),
+);
+const AsyncAbout = lazy(() =>
+  import("./About/About"),
+);
+const AsyncUsers = lazy(() =>
+  import("./Users/Users"),
+);
+const AsyncRegistredForm = lazy(() =>
+  import("./RegistredForm/RegistredForm"),
+);
+const AsyncFooter = lazy(() =>
+  import("./Footer/Footer"),
+);
 
 class App extends Component {
   componentDidMount() {
@@ -34,24 +50,23 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.props)
     return (
-      <>
-        <Modal/>
-        <Header/>
+      <Suspense fallback={<Loaders />}>
+        <AsyncModal/>
+        <AsyncHeader/>
         <div className={css.container}>
-          <BurgerMenu/>
+          <AsyncBurgerMenu/>
         </div>
-        <Bunner/>
+        <AsyncBunner/>
         <div className={css.container}>
-          <AboutMe/>
+          <AsyncAbout/>
         </div>
-          <Users/>
+          <AsyncUsers/>
         <div className={css.container}>
-          <RegistredForm/>
+          <AsyncRegistredForm/>
         </div>
-          <Footer/>
-      </>
+          <AsyncFooter/>
+      </Suspense>
     )
   }
 }
