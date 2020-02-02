@@ -90,7 +90,7 @@
     }
 
     .container {
-        min-width: 708px;
+        width: 708px;
         margin: 0 auto;
     }
 
@@ -139,6 +139,7 @@
     .container {
         min-width: 964px;
         max-width: 1170px;
+        width: 92%;
         padding: 112px 0 ;
     }
 
